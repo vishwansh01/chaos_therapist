@@ -4,7 +4,7 @@ node_modules/
 # Ignore environment variables
 .env
 .env.example
-
+.next
 # Ignore build output
 dist/
 build/
@@ -13,5 +13,12 @@ build/
 *.log
 
 # Ignore OS files
+# prisma
+prisma/migrations/
+
+# logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 .DS_Store
 Thumbs.db
