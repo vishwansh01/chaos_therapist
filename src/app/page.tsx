@@ -53,7 +53,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="min-h-screen noise flex flex-col items-center justify-center p-6 relative overflow-hidden">
+    <main className="min-h-[100dvh] noise flex flex-col items-center justify-center p-6 relative overflow-x-hidden">
       {/* Background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-[-20%] left-[-10%] w-[500px] h-[500px] rounded-full bg-purple-900/20 blur-[100px]" />
@@ -90,10 +90,10 @@ export default function HomePage() {
           <span className="text-white">Therapy</span>
         </h1>
 
-        <div className="h-8 mb-8 overflow-hidden">
+        <div className="h-8 mb-8 ">
           <p
             key={tagline}
-            className="text-[#a855f7] text-sm md:text-base slide-in"
+            className="text-[#a855f7] sm:h-36 md:h-full  text-sm md:text-base slide-in"
           >
             {taglines[tagline]}
           </p>
