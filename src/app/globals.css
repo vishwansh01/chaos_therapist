@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --chaos-yellow: #fbbf24;
+  --chaos-pink: #f472b6;
+  --chaos-purple: #a855f7;
+  --chaos-green: #4ade80;
+  --chaos-bg: #0a0a0f;
+  --chaos-surface: #13131a;
+  --chaos-border: #2a2a3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--chaos-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--chaos-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--chaos-yellow);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Noise texture overlay */
+.noise::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 999;
+}
+
+/* Glow effects */
+.glow-yellow {
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.3);
+}
+.glow-pink {
+  box-shadow: 0 0 20px rgba(244, 114, 182, 0.3);
+}
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+/* Chat bubble styles */
+.bubble-user {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 1px solid var(--chaos-border);
+}
+
+.bubble-admin {
+  background: linear-gradient(135deg, #1f1a2e 0%, #2d1b4e 100%);
+  border: 1px solid rgba(168, 85, 247, 0.4);
+}
+
+.bubble-confession {
+  background: linear-gradient(135deg, #2e1a1a 0%, #4e1b2d 100%);
+  border: 1px solid rgba(244, 114, 182, 0.5);
+}
+
+/* Animated border */
+@keyframes borderPulse {
+  0%, 100% { border-color: rgba(251, 191, 36, 0.3); }
+  50% { border-color: rgba(251, 191, 36, 0.8); }
+}
+
+.border-pulse {
+  animation: borderPulse 2s ease-in-out infinite;
+}
+
+/* Typing indicator */
+@keyframes bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+
+.dot-bounce:nth-child(1) { animation: bounce 1.2s infinite 0s; }
+.dot-bounce:nth-child(2) { animation: bounce 1.2s infinite 0.2s; }
+.dot-bounce:nth-child(3) { animation: bounce 1.2s infinite 0.4s; }
+
+/* Slide in animation */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* Confession shimmer */
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.confession-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(244, 114, 182, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+}
