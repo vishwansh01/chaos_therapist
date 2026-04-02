@@ -101,7 +101,7 @@ export default function ChatPage() {
   const hasAdminMessages = messages.some((m) => m.sender === "admin");
 
   return (
-    <div className="min-h-screen noise flex flex-col bg-[#0a0a0f]">
+    <div className="min-h-[100dvh] noise flex flex-col bg-[#0a0a0f]">
       {/* Header */}
       <header className="sticky top-0 z-20 bg-[#0a0a0f]/90 backdrop-blur-md border-b border-[#2a2a3a] px-4 py-3">
         <div className="max-w-2xl mx-auto flex items-center justify-between">
@@ -129,7 +129,8 @@ export default function ChatPage() {
       </header>
 
       {/* Messages */}
-      <main className="flex-1 overflow-y-auto px-4 py-4">
+      {/* <main className="flex-1 overflow-y-auto px-4 py-4"> */}
+      <main className="px-4 py-4 pb-32">
         <div className="max-w-2xl mx-auto space-y-3">
           {loading ? (
             <div className="flex justify-center items-center h-40">
@@ -186,7 +187,7 @@ export default function ChatPage() {
       </main>
 
       {/* Input */}
-      <footer className="sticky bottom-0 bg-[#0a0a0f]/90 backdrop-blur-md border-t border-[#2a2a3a] px-4 py-3">
+      <footer className="fixed bottom-0 left-0 w-full pb-[env(safe-area-inset-bottom)] bg-[#0a0a0f]/90 backdrop-blur-md border-t border-[#2a2a3a] px-4 py-3">
         <div className="max-w-2xl mx-auto">
           {/* Confession toggle */}
           <div className="flex items-center gap-2 mb-2">

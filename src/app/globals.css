@@ -40,8 +40,8 @@
 
 /* Noise texture overlay */
 .noise::after {
-  content: '';
-  position: fixed;
+  content: "";
+  position: absolute;
   inset: 0;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
   pointer-events: none;
@@ -77,8 +77,13 @@
 
 /* Animated border */
 @keyframes borderPulse {
-  0%, 100% { border-color: rgba(251, 191, 36, 0.3); }
-  50% { border-color: rgba(251, 191, 36, 0.8); }
+  0%,
+  100% {
+    border-color: rgba(251, 191, 36, 0.3);
+  }
+  50% {
+    border-color: rgba(251, 191, 36, 0.8);
+  }
 }
 
 .border-pulse {
@@ -87,13 +92,25 @@
 
 /* Typing indicator */
 @keyframes bounce {
-  0%, 60%, 100% { transform: translateY(0); }
-  30% { transform: translateY(-6px); }
+  0%,
+  60%,
+  100% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-6px);
+  }
 }
 
-.dot-bounce:nth-child(1) { animation: bounce 1.2s infinite 0s; }
-.dot-bounce:nth-child(2) { animation: bounce 1.2s infinite 0.2s; }
-.dot-bounce:nth-child(3) { animation: bounce 1.2s infinite 0.4s; }
+.dot-bounce:nth-child(1) {
+  animation: bounce 1.2s infinite 0s;
+}
+.dot-bounce:nth-child(2) {
+  animation: bounce 1.2s infinite 0.2s;
+}
+.dot-bounce:nth-child(3) {
+  animation: bounce 1.2s infinite 0.4s;
+}
 
 /* Slide in animation */
 @keyframes slideIn {
@@ -113,8 +130,12 @@
 
 /* Confession shimmer */
 @keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
 }
 
 .confession-shimmer {
